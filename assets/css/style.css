@@ -611,8 +611,15 @@ p {
   animation: trail-draw 2600ms var(--ease-in-out) 300ms forwards;
 }
 
-.hero-trail circle {
-  fill: var(--gold);
+.trail-dot {
+  position: absolute;
+  z-index: -1;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: var(--gold);
+  pointer-events: none;
   opacity: 0;
   animation: trail-dot 600ms var(--ease-out) var(--d, 1s) forwards;
 }
@@ -2940,6 +2947,12 @@ p {
     margin-bottom: 20px;
   }
 
+  /* Em uma coluna o texto ocupa toda a largura: a trilha só atrapalharia */
+  .hero-trail,
+  .trail-dot {
+    display: none;
+  }
+
   .product-media {
     position: static;
   }
@@ -3180,7 +3193,7 @@ p {
     stroke-dashoffset: 0;
   }
 
-  .hero-trail circle {
+  .trail-dot {
     animation: none;
     opacity: 0.8;
   }
