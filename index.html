@@ -2,111 +2,259 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Nexus Cristão — A Sua Plataforma de Ensino Cristão</title>
   <meta name="description" content="Destrave um novo nível de intimidade com Deus. Conheça a Nexus Cristão, a plataforma de ensino da Igreja Olaria." />
+  <meta name="theme-color" content="#120e0c" />
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="brand">
-        <img class="logo-icon" src="assets/img/logo-icon.png" alt="Nexus Cristão" />
-        <span class="brand-name">NEXUS<span>CRISTÃO</span></span>
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Nexus Cristão — página inicial">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name" aria-hidden="true">NEXUS<span>CRISTÃO</span></span>
       </a>
 
-      <nav class="nav-links">
-        <a href="index.html" class="active">Nexus</a>
-        <a href="quem-somos.html">Quem Somos</a>
-        <a href="curso.html">Cursos</a>
-        <a href="curso.html" class="btn btn-primary">Quero Começar</a>
+      <nav class="nav" id="menu" aria-label="Principal" data-nav>
+        <a href="index.html" class="nav-link" aria-current="page">Nexus</a>
+        <a href="quem-somos.html" class="nav-link">Quem Somos</a>
+        <a href="curso.html" class="nav-link">Cursos</a>
+        <a href="curso.html" class="btn btn-primary btn-sm">Quero Começar</a>
       </nav>
 
-      <button class="nav-toggle" aria-label="Abrir menu">
-        <span></span><span></span><span></span>
+      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu" data-nav-toggle>
+        <span></span><span></span>
       </button>
     </div>
+    <div class="trail-progress" aria-hidden="true"><span data-trail-progress></span></div>
   </header>
 
-  <main>
+  <main id="conteudo">
     <!-- HERO -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <span class="eyebrow">Igreja Olaria · Ensino Cristão</span>
-            <h1>Bem-vindo à <span class="accent">Nexus Cristão</span></h1>
-            <p class="lead">
-              Destrave um novo nível de intimidade com Deus, <strong>transformando a sua mente e fortalecendo o seu espírito.</strong>
-            </p>
-            <div class="hero-actions">
-              <a href="curso.html" class="btn btn-primary">Quero Transformar a Minha Fé!</a>
-              <a href="quem-somos.html" class="btn btn-ghost">Conhecer a Nexus</a>
-            </div>
+    <section class="hero" data-hero>
+      <div class="hero-light" aria-hidden="true" data-hero-light></div>
+      <svg class="hero-trail" viewBox="0 0 1440 760" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="trail-grad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#d9b578" stop-opacity="0" />
+            <stop offset=".35" stop-color="#d9b578" stop-opacity=".5" />
+            <stop offset="1" stop-color="#ff8a3d" stop-opacity=".75" />
+          </linearGradient>
+        </defs>
+        <path pathLength="1" d="M-40 690 C 160 670 250 560 420 585 S 700 720 880 625 S 1090 360 1250 390 S 1440 260 1500 190" />
+        <circle cx="420" cy="585" r="4" style="--d: 1100ms" />
+        <circle cx="880" cy="625" r="4" style="--d: 1700ms" />
+        <circle cx="1250" cy="390" r="4" style="--d: 2300ms" />
+      </svg>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow-chip" data-reveal><span class="dot" aria-hidden="true"></span>Igreja Olaria · Ensino Cristão</span>
+          <h1 class="hero-title" data-split>Bem-vindo à <span class="accent">Nexus Cristão</span></h1>
+          <p class="lead" data-reveal style="--delay: 320ms">
+            Destrave um novo nível de <em class="serif">intimidade</em> com Deus, <strong>transformando a sua mente e fortalecendo o seu espírito.</strong>
+          </p>
+          <div class="hero-actions" data-reveal style="--delay: 420ms">
+            <a href="curso.html" class="btn btn-primary">
+              Quero Transformar a Minha Fé!
+              <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </a>
+            <a href="#quiz" class="btn btn-ghost">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+              Meu próximo passo
+            </a>
           </div>
-          <div class="hero-visual">
-            <img src="assets/img/hero-trilha.png" alt="Nexus Cristão — Trilha de Crescimento" />
+          <ul class="hero-meta" data-reveal style="--delay: 520ms">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Aulas em vídeo</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>No seu tempo</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Fundamentado na Palavra</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" data-reveal style="--delay: 200ms">
+          <div class="tilt" data-tilt>
+            <img src="assets/img/hero-trilha.png" width="640" height="360" alt="Trilha de Crescimento da Nexus Cristão, com os pastores da Igreja Olaria" fetchpriority="high" />
+            <span class="tilt-glare" aria-hidden="true"></span>
           </div>
+          <a class="float-chip" href="curso.html">
+            <img src="assets/img/curso-startup.jpg" width="500" height="750" alt="" />
+            <span><small>Comece por aqui</small><strong>Start UP</strong></span>
+            <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- QUOTE -->
-    <section class="quote-banner">
+    <!-- CITAÇÃO -->
+    <section class="quote" aria-label="Lema da Trilha de Crescimento">
       <div class="container">
-        <blockquote>
-          “O conhecimento que <span class="accent">liberta</span> e a prática que <span class="accent">transforma</span> destinos.”
+        <blockquote class="quote-text" data-words>
+          “O conhecimento que <span class="accent-word">liberta</span> e a prática que <span class="accent-word">transforma</span> destinos.”
         </blockquote>
         <cite>Trilha de Crescimento — Nexus Cristão</cite>
       </div>
     </section>
 
-    <!-- FEATURES -->
-    <section class="section-alt">
-      <div class="container">
-        <div class="section-head center">
-          <span class="eyebrow">Por que a Nexus</span>
-          <h2>A sua plataforma de ensino cristão</h2>
-          <p>Cursos e trilhas práticas para quem quer crescer na fé com profundidade bíblica e aplicação real no dia a dia.</p>
+    <!-- QUIZ -->
+    <section class="section section-alt" id="quiz" aria-labelledby="quiz-title">
+      <div class="container quiz-grid">
+        <div class="quiz-intro" data-reveal>
+          <span class="eyebrow">Interativo · leva 30 segundos</span>
+          <h2 id="quiz-title">Qual é o seu <span class="serif">próximo passo</span> na fé?</h2>
+          <p>Responda três perguntas rápidas e receba uma trilha sugerida, pensada para o momento que você está vivendo.</p>
+          <ul class="quiz-points">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+              Descubra o seu momento na caminhada
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+              Receba uma trilha de cursos sob medida
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Sem cadastro: o resultado fica só no seu aparelho
+            </li>
+          </ul>
         </div>
 
-        <div class="grid-3">
-          <div class="feature-card">
-            <div class="icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
-            </div>
-            <h3>Ensino sólido</h3>
-            <p>Conteúdo bíblico estruturado em trilhas, direto ao ponto, sem enrolação.</p>
+        <div class="quiz" data-quiz data-reveal style="--delay: 120ms">
+          <div class="quiz-head">
+            <span class="quiz-count" data-quiz-count>Pergunta 1 de 3</span>
+            <button class="quiz-back is-hidden" type="button" data-quiz-back>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+              Voltar
+            </button>
           </div>
-          <div class="feature-card">
-            <div class="icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
-            </div>
-            <h3>Aulas em vídeo</h3>
-            <p>Assista de onde estiver, no seu tempo, com acesso direto pela plataforma.</p>
+          <div class="quiz-bar" aria-hidden="true"><span data-quiz-bar></span></div>
+          <div class="quiz-stage" data-quiz-stage>
+            <p class="result-text">Ative o JavaScript para fazer o teste, ou <a href="curso.html" class="accent">conheça os cursos</a>.</p>
           </div>
-          <div class="feature-card">
-            <div class="icon">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
-            </div>
-            <h3>Transformação prática</h3>
-            <p>Cada módulo entrega passos concretos para aplicar na sua vida e ministério.</p>
-          </div>
+          <p class="sr-only" aria-live="polite" data-quiz-live></p>
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section>
+    <!-- POR QUE A NEXUS -->
+    <section class="section">
       <div class="container">
-        <div class="cta-banner">
-          <h2>A Sua Plataforma De Ensino Cristão!</h2>
-          <a href="curso.html" class="btn btn-primary">Conhecer os Cursos</a>
+        <div class="section-head center" data-reveal>
+          <span class="eyebrow">Por que a Nexus</span>
+          <h2>A sua plataforma de <span class="serif">ensino cristão</span></h2>
+          <p>Cursos e trilhas práticas para quem quer crescer na fé com profundidade bíblica e aplicação real no dia a dia.</p>
+        </div>
+
+        <div class="bento" data-stagger>
+          <article class="bento-card b-wide b-teach spot" data-reveal>
+            <div>
+              <div class="bento-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </div>
+              <h3>Ensino sólido</h3>
+              <p>Conteúdo bíblico estruturado em trilhas, direto ao ponto, sem enrolação.</p>
+            </div>
+            <div class="fan" aria-hidden="true">
+              <img src="assets/img/curso-alicerces.jpg" width="500" height="750" alt="" loading="lazy" decoding="async" />
+              <img src="assets/img/curso-intencionalidade.jpg" width="500" height="750" alt="" loading="lazy" decoding="async" />
+              <img src="assets/img/curso-cultura-honra.jpg" width="500" height="750" alt="" loading="lazy" decoding="async" />
+            </div>
+          </article>
+
+          <article class="bento-card b-video spot" data-reveal>
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </div>
+            <h3>Aulas em vídeo</h3>
+            <p>Assista de onde estiver, no seu tempo, com acesso direto pela plataforma.</p>
+            <div class="mini-player" aria-hidden="true">
+              <div class="mini-player-screen">
+                <img src="assets/img/video-poster.jpg" width="1530" height="1080" alt="" loading="lazy" decoding="async" />
+                <div class="mini-player-play"><span><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20 7 4"/></svg></span></div>
+                <div class="mini-player-bar"><span></span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="bento-card b-practice spot" data-reveal>
+            <div class="bento-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+            </div>
+            <h3>Transformação prática</h3>
+            <p>Cada módulo entrega passos concretos para aplicar na sua vida e ministério.</p>
+            <ul class="practice">
+              <li><span class="practice-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Aprender</li>
+              <li><span class="practice-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Praticar</li>
+              <li><span class="practice-check" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Viver</li>
+            </ul>
+          </article>
+
+          <article class="bento-card b-wide b-verse spot" data-verse data-reveal aria-labelledby="verse-label">
+            <div class="verse-top">
+              <span class="eyebrow" id="verse-label">Palavra para hoje</span>
+              <span class="verse-date" data-verse-date></span>
+            </div>
+            <div class="verse-flip">
+              <div class="verse-inner" data-verse-inner>
+                <figure class="verse-face">
+                  <blockquote><p data-verse-text>Lâmpada para os meus pés é a tua palavra, e luz para o meu caminho.</p></blockquote>
+                  <figcaption data-verse-ref>Salmos 119:105</figcaption>
+                </figure>
+                <figure class="verse-face is-back" aria-hidden="true">
+                  <blockquote><p data-verse-text></p></blockquote>
+                  <figcaption data-verse-ref></figcaption>
+                </figure>
+              </div>
+            </div>
+            <div class="verse-actions">
+              <button class="btn btn-ghost btn-sm" type="button" data-verse-next>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+                Receber outra palavra
+              </button>
+              <button class="icon-btn" type="button" aria-label="Copiar versículo" data-verse-copy>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              </button>
+              <button class="icon-btn" type="button" aria-label="Compartilhar versículo" data-verse-share hidden>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" x2="12" y1="2" y2="15"/></svg>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA: SEGURE PARA DAR O PRIMEIRO PASSO -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta-hold" data-reveal>
+          <div class="cta-hold-copy">
+            <span class="eyebrow">O primeiro passo</span>
+            <h2>A sua transformação começa com uma decisão.</h2>
+            <p>Toda trilha começa com um passo. Segure o botão e firme o seu.</p>
+          </div>
+
+          <div>
+            <div class="hold-slot" data-hold-slot>
+              <button class="hold-btn" type="button" data-hold aria-describedby="hold-hint">
+                <span class="hold-label" data-hold-label>Segure para dar o primeiro passo</span>
+                <span class="hold-fill" aria-hidden="true"><span class="hold-label" data-hold-label>Segure para dar o primeiro passo</span></span>
+              </button>
+              <a href="curso.html" class="btn btn-dark hold-next" data-hold-next>
+                Escolher meu curso
+                <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+              </a>
+            </div>
+            <p class="hold-hint" id="hold-hint" data-hold-hint>
+              Pressione e segure<span class="kbd-only"> (ou mantenha a tecla Espaço)</span> · <a href="curso.html">ir direto aos cursos</a>
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -116,27 +264,27 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="brand">
-            <img class="logo-full" src="assets/img/logo-full.png" alt="Nexus Cristão" />
-          </a>
+          <a href="index.html" aria-label="Nexus Cristão — página inicial"><span class="footer-logo" aria-hidden="true"></span></a>
           <p>Plataforma de ensino cristão da Igreja Olaria.</p>
         </div>
-
-        <div class="footer-links">
-          <div>
-            <h4>Navegação</h4>
-            <ul>
-              <li><a href="index.html">Nexus</a></li>
-              <li><a href="quem-somos.html">Quem Somos</a></li>
-              <li><a href="curso.html">Cursos</a></li>
-            </ul>
-          </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Nexus</a></li>
+            <li><a href="quem-somos.html">Quem Somos</a></li>
+            <li><a href="curso.html">Cursos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Comece por aqui</h4>
+          <ul>
+            <li><a href="index.html#quiz">Descobrir meu próximo passo</a></li>
+            <li><a href="curso.html#trilha">Ver a trilha completa</a></li>
+            <li><a href="https://pay.kiwify.com.br/jLZNiTk" target="_blank" rel="noopener">Garantir meu acesso</a></li>
+          </ul>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        © 2026 Nexus Cristão. Todos os direitos reservados.
-      </div>
+      <div class="footer-bottom">© 2026 Nexus Cristão. Todos os direitos reservados.</div>
     </div>
   </footer>
 

@@ -2,76 +2,124 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Cursos — Nexus Cristão</title>
   <meta name="description" content="Conheça os cursos Start UP e Imersão e Visão da Nexus Cristão e garanta seu acesso agora." />
+  <meta name="theme-color" content="#120e0c" />
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="brand">
-        <img class="logo-icon" src="assets/img/logo-icon.png" alt="Nexus Cristão" />
-        <span class="brand-name">NEXUS<span>CRISTÃO</span></span>
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Nexus Cristão — página inicial">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name" aria-hidden="true">NEXUS<span>CRISTÃO</span></span>
       </a>
 
-      <nav class="nav-links">
-        <a href="index.html">Nexus</a>
-        <a href="quem-somos.html">Quem Somos</a>
-        <a href="curso.html" class="active">Cursos</a>
-        <a href="https://pay.kiwify.com.br/jLZNiTk" class="btn btn-primary" target="_blank" rel="noopener">Quero Começar</a>
+      <nav class="nav" id="menu" aria-label="Principal" data-nav>
+        <a href="index.html" class="nav-link">Nexus</a>
+        <a href="quem-somos.html" class="nav-link">Quem Somos</a>
+        <a href="curso.html" class="nav-link" aria-current="page">Cursos</a>
+        <a href="https://pay.kiwify.com.br/jLZNiTk" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Quero Começar</a>
       </nav>
 
-      <button class="nav-toggle" aria-label="Abrir menu">
-        <span></span><span></span><span></span>
+      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu" data-nav-toggle>
+        <span></span><span></span>
       </button>
     </div>
+    <div class="trail-progress" aria-hidden="true"><span data-trail-progress></span></div>
   </header>
 
-  <main>
+  <main id="conteudo">
     <!-- PRODUTO -->
-    <section style="padding-top: 60px;">
+    <section class="product">
       <div class="container">
-        <div class="product-hero">
-          <div>
-            <div class="dual-cover">
-              <div class="cover">
-                <img src="assets/img/curso-startup.jpg" alt="Capa do curso Start UP" />
+        <aside class="reco" data-reco hidden aria-label="Sugestão de trilha">
+          <span class="reco-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+          </span>
+          <p data-reco-text></p>
+          <a href="index.html#quiz" data-reco-link>Fazer o teste</a>
+          <button class="icon-btn" type="button" aria-label="Dispensar sugestão" data-reco-close>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </aside>
+
+        <div class="product-grid">
+          <div class="product-media" data-reveal>
+            <div class="cover-stack" aria-hidden="true">
+              <div class="cover" data-cover="startup" data-pos="front">
+                <img src="assets/img/curso-startup.jpg" width="500" height="750" alt="" fetchpriority="high" />
               </div>
-              <div class="cover">
-                <img src="assets/img/curso-imersao.jpg" alt="Capa do curso Imersão e Visão" />
+              <div class="cover" data-cover="imersao" data-pos="back">
+                <img src="assets/img/curso-imersao.jpg" width="500" height="750" alt="" />
+              </div>
+            </div>
+
+            <div class="seg" data-course-tabs>
+              <div class="seg-track" role="tablist" aria-label="Escolha o curso">
+                <button class="seg-btn" type="button" role="tab" id="tab-startup" aria-controls="panel-startup" aria-selected="true" data-course="startup">Start UP</button>
+                <button class="seg-btn" type="button" role="tab" id="tab-imersao" aria-controls="panel-imersao" aria-selected="false" tabindex="-1" data-course="imersao">Imersão e Visão</button>
               </div>
             </div>
           </div>
 
-          <div>
+          <div class="product-copy" data-reveal style="--delay: 120ms">
             <span class="eyebrow">Cursos · Nexus Cristão</span>
-            <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 20px;">Conheça nossos cursos <span class="accent" style="background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent;">Start UP</span> e <span class="accent" style="background: var(--gradient-brand); -webkit-background-clip: text; background-clip: text; color: transparent;">Imersão e Visão</span>!</h1>
-            <p class="lead" style="max-width: 60ch;">
+            <h1>Conheça nossos cursos <span class="accent">Start UP</span> e <span class="accent">Imersão e Visão</span>!</h1>
+            <p class="lead">
               Nossos cursos são o seu ponto de partida para uma jornada de aprofundamento e desenvolvimento contínuo
               em sua fé e chamado. Acreditamos que o crescimento espiritual não é um destino, mas um caminho ativo, e
               por isso criamos este espaço como um ambiente de conhecimento estratégico e transformação prática.
             </p>
-            <p class="lead" style="max-width: 60ch;">
+            <p class="lead">
               Aqui, você encontrará as ferramentas, a sabedoria e as direções necessárias para expandir sua
               compreensão, fortalecer seus fundamentos e maximizar seu potencial dentro do Reino.
             </p>
 
-            <div class="price-card">
-              <span class="eyebrow" style="margin-bottom: 4px;">O que você recebe</span>
-              <ul>
+            <div class="course-panels">
+              <div class="course-panel is-active" id="panel-startup" role="tabpanel" aria-labelledby="tab-startup" tabindex="0" data-panel="startup">
+                <h2 class="panel-title">Start UP <span class="pill">Porta de entrada</span></h2>
+                <p>O começo da Trilha de Crescimento: direção clara para quem quer caminhar com Deus de forma intencional.</p>
+                <ul class="ticks">
+                  <li>Entenda como funciona a Trilha de Crescimento</li>
+                  <li>Dê os primeiros passos com clareza e propósito</li>
+                  <li>Prepare a base para os próximos módulos</li>
+                </ul>
+              </div>
+              <div class="course-panel" id="panel-imersao" role="tabpanel" aria-labelledby="tab-imersao" tabindex="0" data-panel="imersao">
+                <h2 class="panel-title">Imersão e Visão <span class="pill">Da igreja</span></h2>
+                <p>Um mergulho na visão da igreja, para entender o que Deus está construindo e qual é o seu lugar nessa construção.</p>
+                <ul class="ticks">
+                  <li>Compreenda a visão e o propósito da igreja</li>
+                  <li>Descubra como servir com propósito no Corpo</li>
+                  <li>Alinhe o seu chamado à visão da casa</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="offer" id="oferta">
+              <span class="eyebrow">O que você recebe</span>
+              <ul class="ticks">
                 <li>Acesso imediato às aulas dos módulos Start UP e Imersão e Visão</li>
                 <li>Conteúdo direto, prático e fundamentado na Palavra</li>
                 <li>Acesso pela plataforma, no seu tempo</li>
               </ul>
               <a href="https://pay.kiwify.com.br/jLZNiTk" class="btn btn-primary btn-block" target="_blank" rel="noopener">
                 Quero Garantir Meu Acesso!
+                <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
               </a>
+              <p class="offer-note">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Pagamento processado pela Kiwify
+              </p>
             </div>
           </div>
         </div>
@@ -79,94 +127,162 @@
     </section>
 
     <!-- TRILHA COMPLETA -->
-    <section class="section-alt">
+    <section class="section section-alt" id="trilha" aria-labelledby="trilha-title">
       <div class="container">
-        <div class="section-head center">
+        <div class="section-head center" data-reveal>
           <span class="eyebrow">Trilha Completa</span>
-          <h2>Mais módulos da Nexus Cristão</h2>
+          <h2 id="trilha-title">Mais módulos da <span class="serif">Nexus Cristão</span></h2>
           <p>O Start UP é a porta de entrada. Depois dele, a trilha continua com estes módulos.</p>
         </div>
 
-        <div class="modules-grid">
-          <div class="module-card">
-            <img src="assets/img/curso-intencionalidade.jpg" alt="Intencionalidade Ativa" />
-            <span class="module-tag">Intencionalidade Ativa</span>
+        <div class="trail" data-trail data-reveal>
+          <div class="trail-toolbar">
+            <div class="seg" data-trail-filter>
+              <div class="seg-track" role="group" aria-label="Filtrar a trilha">
+                <button class="seg-btn" type="button" aria-pressed="true" data-filter="all">Todos <span class="seg-count">9</span></button>
+                <button class="seg-btn" type="button" aria-pressed="false" data-filter="modulo">Módulos <span class="seg-count">6</span></button>
+                <button class="seg-btn" type="button" aria-pressed="false" data-filter="retiro">Retiros <span class="seg-count">3</span></button>
+              </div>
+            </div>
+            <div class="trail-controls">
+              <span class="trail-count" role="status" data-trail-count>9 etapas</span>
+              <button class="icon-btn" type="button" aria-label="Voltar na trilha" data-trail-prev>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button class="icon-btn" type="button" aria-label="Avançar na trilha" data-trail-next>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
           </div>
-          <div class="module-card">
-            <img src="assets/img/curso-satisfacao.jpg" alt="Curso de Satisfação" />
-            <span class="module-tag">Curso de Satisfação</span>
+
+          <div class="trail-viewport" tabindex="0" role="region" aria-label="Módulos e retiros da trilha" data-trail-viewport>
+            <ol class="trail-track" data-modules>
+              <li class="module" data-kind="modulo" data-key="intencionalidade">
+                <span class="station" aria-hidden="true"></span>
+                <div class="module-cover spot">
+                  <img src="assets/img/curso-intencionalidade.jpg" width="500" height="750" alt="" loading="lazy" decoding="async" draggable="false" />
+                </div>
+                <div class="module-info"><span class="module-kind">Módulo</span><h3>Intencionalidade Ativa</h3></div>
+              </li>
+              <li class="module" data-kind="modulo" data-key="satisfacao">
+                <span class="station" aria-hidden="true"></span>
+                <div class="module-cover spot">
+                  <img src="assets/img/curso-satisfacao.jpg" width="500" height="750" alt="" loading="lazy" decoding="async" draggable="false" />
+                </div>
+                <div class="module-info"><span class="module-kind">Módulo</span><h3>Curso de Satisfação</h3></div>
+              </li>
+              <li class="module" data-kind="modulo" data-key="alicerces">
+                <span class="station" aria-hidden="true"></span>
+                <div class="module-cover spot">
+                  <img src="assets/img/curso-alicerces.jpg" width="500" height="750" alt="" loading="lazy" decoding="async" draggable="false" />
+                </div>
+                <div class="module-info"><span class="module-kind">Módulo</span><h3>Alicerces da Nossa Fé</h3></div>
+              </li>
+              <li class="module" data-kind="modulo" data-key="exercemos-fe">
+                <span class="station" aria-hidden="true"></span>
+                <div class="module-cover spot">
+                  <img src="assets/img/curso-exercemos-fe.jpg" width="500" height="750" alt="" loading="lazy" decoding="async" draggable="false" />
+                </div>
+                <div class="module-info"><span class="module-kind">Módulo</span><h3>Como Exercemos Nossa Fé</h3></div>
+              </li>
+              <li class="module" data-kind="modulo" data-key="cultura-igreja">
+                <span class="station" aria-hidden="true"></span>
+                <div class="module-cover spot">
+                  <img src="assets/img/curso-cultura-igreja.jpg" width="500" height="750" alt="" loading="lazy" decoding="async" draggable="false" />
+                </div>
+                <div class="module-info"><span class="module-kind">Módulo</span><h3>Cultura da Igreja</h3></div>
+              </li>
+              <li class="module" data-kind="modulo" data-key="cultura-honra">
+                <span class="station" aria-hidden="true"></span>
+                <div class="module-cover spot">
+                  <img src="assets/img/curso-cultura-honra.jpg" width="500" height="750" alt="" loading="lazy" decoding="async" draggable="false" />
+                </div>
+                <div class="module-info"><span class="module-kind">Módulo</span><h3>Cultura da Honra</h3></div>
+              </li>
+              <li class="module" data-kind="retiro" data-key="retiro-restauracao" data-soon>
+                <span class="station" aria-hidden="true"></span>
+                <div class="module-cover spot">
+                  <span class="badge badge-soon">Em breve</span>
+                  <img src="assets/img/curso-retiro-restauracao.jpg" width="500" height="750" alt="" loading="lazy" decoding="async" draggable="false" />
+                </div>
+                <div class="module-info"><span class="module-kind">Retiro</span><h3>Restauração e Impacto</h3></div>
+              </li>
+              <li class="module" data-kind="retiro" data-key="retiro-mulheres" data-soon>
+                <span class="station" aria-hidden="true"></span>
+                <div class="module-cover spot">
+                  <span class="badge badge-soon">Em breve</span>
+                  <img src="assets/img/curso-retiro-mulheres.jpg" width="500" height="750" alt="" loading="lazy" decoding="async" draggable="false" />
+                </div>
+                <div class="module-info"><span class="module-kind">Retiro</span><h3>Retiro de Mulheres: Flowers</h3></div>
+              </li>
+              <li class="module" data-kind="retiro" data-key="retiro-homens" data-soon>
+                <span class="station" aria-hidden="true"></span>
+                <div class="module-cover spot">
+                  <span class="badge badge-soon">Em breve</span>
+                  <img src="assets/img/curso-retiro-homens.jpg" width="500" height="750" alt="" loading="lazy" decoding="async" draggable="false" />
+                </div>
+                <div class="module-info"><span class="module-kind">Retiro</span><h3>Homens de Honra</h3></div>
+              </li>
+            </ol>
           </div>
-          <div class="module-card">
-            <img src="assets/img/curso-alicerces.jpg" alt="Alicerces da Nossa Fé" />
-            <span class="module-tag">Alicerces da Nossa Fé</span>
-          </div>
-          <div class="module-card">
-            <img src="assets/img/curso-exercemos-fe.jpg" alt="Como Exercemos Nossa Fé" />
-            <span class="module-tag">Como Exercemos Nossa Fé</span>
-          </div>
-          <div class="module-card">
-            <img src="assets/img/curso-cultura-igreja.jpg" alt="Cultura da Igreja" />
-            <span class="module-tag">Cultura da Igreja</span>
-          </div>
-          <div class="module-card">
-            <img src="assets/img/curso-cultura-honra.jpg" alt="Cultura da Honra" />
-            <span class="module-tag">Cultura da Honra</span>
-          </div>
-          <div class="module-card">
-            <img src="assets/img/curso-retiro-restauracao.jpg" alt="O Retiro: Restauração e Impacto" />
-            <span class="badge">Em Breve</span>
-            <span class="module-tag">Retiro: Restauração e Impacto</span>
-          </div>
-          <div class="module-card">
-            <img src="assets/img/curso-retiro-mulheres.jpg" alt="O Retiro de Mulheres Flowers" />
-            <span class="badge">Em Breve</span>
-            <span class="module-tag">Retiro de Mulheres: Flowers</span>
-          </div>
-          <div class="module-card">
-            <img src="assets/img/curso-retiro-homens.jpg" alt="O Retiro Homens de Honra" />
-            <span class="badge">Em Breve</span>
-            <span class="module-tag">Retiro: Homens de Honra</span>
-          </div>
+          <div class="trail-scrollbar" aria-hidden="true"><span data-trail-thumb></span></div>
         </div>
       </div>
     </section>
 
     <!-- CTA FINAL -->
-    <section>
+    <section class="section" data-buybar-stop>
       <div class="container">
-        <div class="cta-banner">
+        <div class="cta-banner" data-reveal>
           <h2>Sua transformação começa com um passo. Dê o primeiro agora.</h2>
-          <a href="https://pay.kiwify.com.br/jLZNiTk" class="btn btn-primary" target="_blank" rel="noopener">Quero Garantir Meu Acesso!</a>
+          <div class="cta-banner-actions">
+            <a href="https://pay.kiwify.com.br/jLZNiTk" class="btn btn-dark" target="_blank" rel="noopener">
+              Quero Garantir Meu Acesso!
+              <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <!-- Barra de compra flutuante: aparece depois que a oferta sai da tela -->
+  <div class="buybar" data-buybar>
+    <div class="buybar-inner">
+      <img src="assets/img/curso-startup.jpg" width="500" height="750" alt="" loading="lazy" decoding="async" />
+      <div class="buybar-text">
+        <strong>Start UP + Imersão e Visão</strong>
+        <small>Acesso imediato pela plataforma</small>
+      </div>
+      <a href="https://pay.kiwify.com.br/jLZNiTk" class="btn btn-primary" target="_blank" rel="noopener">Garantir acesso</a>
+    </div>
+  </div>
+
+  <footer class="site-footer" data-buybar-stop>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="brand">
-            <img class="logo-full" src="assets/img/logo-full.png" alt="Nexus Cristão" />
-          </a>
+          <a href="index.html" aria-label="Nexus Cristão — página inicial"><span class="footer-logo" aria-hidden="true"></span></a>
           <p>Plataforma de ensino cristão da Igreja Olaria.</p>
         </div>
-
-        <div class="footer-links">
-          <div>
-            <h4>Navegação</h4>
-            <ul>
-              <li><a href="index.html">Nexus</a></li>
-              <li><a href="quem-somos.html">Quem Somos</a></li>
-              <li><a href="curso.html">Cursos</a></li>
-            </ul>
-          </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Nexus</a></li>
+            <li><a href="quem-somos.html">Quem Somos</a></li>
+            <li><a href="curso.html">Cursos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Comece por aqui</h4>
+          <ul>
+            <li><a href="index.html#quiz">Descobrir meu próximo passo</a></li>
+            <li><a href="curso.html#trilha">Ver a trilha completa</a></li>
+            <li><a href="https://pay.kiwify.com.br/jLZNiTk" target="_blank" rel="noopener">Garantir meu acesso</a></li>
+          </ul>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        © 2026 Nexus Cristão. Todos os direitos reservados.
-      </div>
+      <div class="footer-bottom">© 2026 Nexus Cristão. Todos os direitos reservados.</div>
     </div>
   </footer>
 

@@ -1,0 +1,8 @@
+{
+  "name": "nexus-landing-page",
+  "private": true,
+  "description": "Landing page da Nexus Cristão (site estático)",
+  "scripts": {
+    "dev": "npx --yes serve -l 3000 ."
+  }
+}

@@ -2,64 +2,74 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Quem Somos — Nexus Cristão</title>
   <meta name="description" content="Conheça a história e a missão da Nexus Cristão, a plataforma de ensino da Igreja Olaria." />
+  <meta name="theme-color" content="#120e0c" />
   <link rel="icon" type="image/png" href="assets/img/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <header class="site-header">
-    <div class="container">
-      <a href="index.html" class="brand">
-        <img class="logo-icon" src="assets/img/logo-icon.png" alt="Nexus Cristão" />
-        <span class="brand-name">NEXUS<span>CRISTÃO</span></span>
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Nexus Cristão — página inicial">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-name" aria-hidden="true">NEXUS<span>CRISTÃO</span></span>
       </a>
 
-      <nav class="nav-links">
-        <a href="index.html">Nexus</a>
-        <a href="quem-somos.html" class="active">Quem Somos</a>
-        <a href="curso.html">Cursos</a>
-        <a href="curso.html" class="btn btn-primary">Quero Começar</a>
+      <nav class="nav" id="menu" aria-label="Principal" data-nav>
+        <a href="index.html" class="nav-link">Nexus</a>
+        <a href="quem-somos.html" class="nav-link" aria-current="page">Quem Somos</a>
+        <a href="curso.html" class="nav-link">Cursos</a>
+        <a href="curso.html" class="btn btn-primary btn-sm">Quero Começar</a>
       </nav>
 
-      <button class="nav-toggle" aria-label="Abrir menu">
-        <span></span><span></span><span></span>
+      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu" data-nav-toggle>
+        <span></span><span></span>
       </button>
     </div>
+    <div class="trail-progress" aria-hidden="true"><span data-trail-progress></span></div>
   </header>
 
-  <main>
+  <main id="conteudo">
     <!-- TÍTULO + VÍDEO -->
-    <section style="padding-top: 60px;">
+    <section class="section" style="padding-top: 64px;">
       <div class="container">
-        <div class="section-head center">
+        <div class="section-head center" data-reveal>
           <span class="eyebrow">Quem Somos</span>
-          <h2>O que é a Nexus?</h2>
+          <h2>O que é a <span class="serif">Nexus</span>?</h2>
           <p>Assista e entenda como a Nexus Cristão nasceu para ser a plataforma de ensino da Igreja Olaria.</p>
         </div>
 
-        <div class="video-frame" style="max-width: 780px; margin: 0 auto; aspect-ratio: 1530 / 1080;">
-          <video controls preload="metadata" poster="assets/img/video-poster.jpg">
+        <div class="video-frame" data-video data-reveal style="--delay: 120ms">
+          <video preload="none" playsinline poster="assets/img/video-poster.jpg">
             <source src="assets/video/quem-somos.mp4" type="video/mp4" />
             Seu navegador não suporta vídeo em HTML5.
           </video>
+          <button class="video-play" type="button" data-video-play aria-label="Assistir ao vídeo: O que é a Nexus? (53 segundos)">
+            <span class="play-ring" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><polygon points="7 4 20 12 7 20 7 4"/></svg>
+            </span>
+            <span class="play-label" aria-hidden="true">Assistir agora <small>0:53</small></span>
+          </button>
         </div>
       </div>
     </section>
 
     <!-- SOBRE / MISSÃO -->
-    <section class="section-alt">
+    <section class="section section-alt">
       <div class="container">
         <div class="about-grid">
-          <img class="about-img" src="assets/img/hero-trilha.png" alt="Nexus Cristão — Trilha de Crescimento" />
-          <div>
+          <img class="about-img" src="assets/img/hero-trilha.png" width="640" height="360" alt="Trilha de Crescimento da Nexus Cristão, com os pastores da Igreja Olaria" loading="lazy" decoding="async" data-reveal />
+          <div data-reveal style="--delay: 120ms">
             <span class="eyebrow">Nossa Missão</span>
-            <h2>Conhecimento que liberta, prática que transforma</h2>
+            <h2>Conhecimento que <span class="serif">liberta</span>, prática que transforma</h2>
             <p>
               A Nexus Cristão existe para levar ensino bíblico sólido e aplicável a quem quer ir mais fundo na fé.
               Não é apenas teoria: é uma trilha de crescimento pensada para transformar mente, fortalecer o espírito
@@ -80,12 +90,48 @@
       </div>
     </section>
 
-    <!-- CTA -->
-    <section>
+    <!-- COMO FUNCIONA -->
+    <section class="section">
       <div class="container">
-        <div class="cta-banner">
+        <div class="section-head center" data-reveal>
+          <span class="eyebrow">Como funciona</span>
+          <h2>Aprender, praticar, <span class="serif">viver</span>.</h2>
+          <p>Três movimentos que se repetem em cada etapa da trilha.</p>
+        </div>
+
+        <ol class="steps" data-reveal>
+          <li class="steps-line" aria-hidden="true"><span></span></li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">01</span>
+            <h3>Aprender</h3>
+            <p>Ensino bíblico sólido, organizado em trilhas e direto ao ponto.</p>
+          </li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">02</span>
+            <h3>Praticar</h3>
+            <p>Cada módulo traz passos concretos para aplicar na sua rotina.</p>
+          </li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">03</span>
+            <h3>Viver</h3>
+            <p>A transformação chega ao dia a dia: na sua casa e na sua igreja.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="cta-banner" data-reveal>
           <h2>Pronto para dar o próximo passo na sua fé?</h2>
-          <a href="curso.html" class="btn btn-primary">Conhecer os Cursos</a>
+          <div class="cta-banner-actions">
+            <a href="curso.html" class="btn btn-dark">
+              Conhecer os Cursos
+              <svg class="btn-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+            </a>
+            <a href="index.html#quiz" class="btn btn-ghost">Fazer o teste</a>
+          </div>
         </div>
       </div>
     </section>
@@ -95,27 +141,27 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="index.html" class="brand">
-            <img class="logo-full" src="assets/img/logo-full.png" alt="Nexus Cristão" />
-          </a>
+          <a href="index.html" aria-label="Nexus Cristão — página inicial"><span class="footer-logo" aria-hidden="true"></span></a>
           <p>Plataforma de ensino cristão da Igreja Olaria.</p>
         </div>
-
-        <div class="footer-links">
-          <div>
-            <h4>Navegação</h4>
-            <ul>
-              <li><a href="index.html">Nexus</a></li>
-              <li><a href="quem-somos.html">Quem Somos</a></li>
-              <li><a href="curso.html">Cursos</a></li>
-            </ul>
-          </div>
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="index.html">Nexus</a></li>
+            <li><a href="quem-somos.html">Quem Somos</a></li>
+            <li><a href="curso.html">Cursos</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Comece por aqui</h4>
+          <ul>
+            <li><a href="index.html#quiz">Descobrir meu próximo passo</a></li>
+            <li><a href="curso.html#trilha">Ver a trilha completa</a></li>
+            <li><a href="https://pay.kiwify.com.br/jLZNiTk" target="_blank" rel="noopener">Garantir meu acesso</a></li>
+          </ul>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        © 2026 Nexus Cristão. Todos os direitos reservados.
-      </div>
+      <div class="footer-bottom">© 2026 Nexus Cristão. Todos os direitos reservados.</div>
     </div>
   </footer>
 
